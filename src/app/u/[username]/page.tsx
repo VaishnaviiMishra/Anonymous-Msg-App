@@ -24,6 +24,8 @@ import { ApiResponse } from '@/types/ApiResponse';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { messageSchema } from '@/schemas/messageSchema';
+import Navbar from '@/components/Navbar';
+
 
 const specialChar = '||';
 
@@ -96,7 +98,10 @@ export default function SendMessage() {
   };
 
   return (
-    <div className="container mx-auto my-8 p-6 bg-white rounded max-w-4xl">
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+      <div className="container mx-auto my-8 p-6 bg-white rounded max-w-4xl">
+      
       <h1 className="text-4xl font-bold mb-6 text-center">
         Public Profile Link
       </h1>
@@ -175,5 +180,7 @@ export default function SendMessage() {
         </Link>
       </div>
     </div>
+    </div>
+    
   );
 }
